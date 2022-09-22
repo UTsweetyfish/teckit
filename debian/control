@@ -1,0 +1,71 @@
+Source: teckit
+Build-Depends: debhelper-compat (=13),
+               pkg-config,
+               chrpath,
+               zlib1g-dev,
+               libexpat1-dev,
+               pkg-kde-tools
+Section: text
+Priority: optional
+Maintainer: Debian TeX Maintainers <debian-tex-maint@lists.debian.org>
+Uploaders: Daniel Glassey <wdg@debian.org>,
+	Norbert Preining <norbert@preining.info>,
+	Hilmar Preusse <hille42@web.de>,
+Standards-Version: 4.5.0
+Rules-Requires-Root: no
+Homepage: https://github.com/silnrsi/teckit
+Vcs-Git: https://github.com/debian-tex/teckit.git
+Vcs-Browser: https://github.com/debian-tex/teckit
+
+Package: teckit
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends},
+         libteckit0 (= ${binary:Version})
+Replaces: texlive-binaries (<< 2018.20180907.48586-3~)
+Breaks: texlive-binaries (<< 2018.20180907.48586-3~)
+Multi-Arch: foreign
+Description: Custom legacy encoding conversion tools for plain text files
+ TECkit is a toolkit for encoding conversions. It offers a simple format for
+ describing the mapping between legacy 8-bit encodings and Unicode, and a
+ set of utilities based on such descriptions for converting text between 8-bit
+ and Unicode encodings.
+ .
+ It also includes a compiler for a mapping description language that allows for
+ bidirectional conversion description (i.e. the same description is used for
+ conversion to and from Unicode).
+
+Package: libteckit0
+Architecture: any
+Section: libs
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Multi-Arch: same
+Description: Encoding conversion library
+ TECkit is a toolkit for encoding conversions. It offers a simple format for
+ describing the mapping between legacy 8-bit encodings and Unicode, and a
+ set of utilities based on such descriptions for converting text between 8-bit
+ and Unicode encodings.
+ .
+ It also includes a compiler for a mapping description language that allows for
+ bidirectional conversion description (i.e. the same description is used for
+ conversion to and from Unicode).
+ .
+ This package contains the shared libraries libTECkit and libTECkit_Compiler.
+
+Package: libteckit-dev
+Architecture: any
+Section: libdevel
+Depends: libteckit0 (= ${binary:Version}), ${misc:Depends}
+Multi-Arch: same
+Description: Development files for TECkit encoding conversion library
+ TECkit is a toolkit for encoding conversions. It offers a simple format for
+ describing the mapping between legacy 8-bit encodings and Unicode, and a
+ set of utilities based on such descriptions for converting text between 8-bit
+ and Unicode encodings.
+ .
+ It also includes a compiler for a mapping description language that allows for
+ bidirectional conversion description (i.e. the same description is used for
+ conversion to and from Unicode).
+ .
+ This package contains development files to allow linking to libTECkit
+ for data conversion, and libTECkit_Compiler to compile mappings.

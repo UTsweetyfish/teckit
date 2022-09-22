@@ -1,0 +1,145 @@
+teckit (2.5.11+ds1-1) unstable; urgency=medium
+
+  * New upstream version 2.5.11+ds1
+  * "Rules-Requires-Root: no", dh compat 13.
+  * Lintian stuff, incl. Overrides.
+  * Do not run test suite during build, turn it into autopkgtest.
+
+ -- Hilmar Preusse <hille42@web.de>  Sun, 14 Nov 2021 22:57:47 +0100
+
+teckit (2.5.10+ds1-3) unstable; urgency=medium
+
+  * switch from symbols file to shlibs (Closes: #969152)
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 02 Sep 2020 04:56:37 +0900
+
+teckit (2.5.10+ds1-2) unstable; urgency=medium
+
+  * add Hilmar to uploaders
+  * fix symbols file for 32bit builds (Closes: #969152)
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 31 Aug 2020 12:05:41 +0900
+
+teckit (2.5.10+ds1-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream version 2.5.10+ds1
+  * Update VCS and my email
+  * update symbols file
+  * remove --list-missing from dh_install call
+  * remove debian provided man pages, available in the dist
+  * update to dh12, install system man pages, make sure .la files are not warned
+  * make d-t-m the maintainer, and us two uploaders (to get bugs)
+  * exclude newer zlib files, too
+  * don't mangle to +ds2 but +ds1
+  * sync patches with TL
+  * bump standards version, no changes necessary
+
+  [ Matthias Klose ]
+  * Mark more symbols not seen on ppc64el when built with -O3.
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 20 Aug 2020 15:05:01 +0900
+
+teckit (2.5.8+ds2-5) unstable; urgency=medium
+
+  * d/libteckit0.symbols add symbols for armel, armhf
+
+ -- Daniel Glassey <wdg@debian.org>  Mon, 05 Nov 2018 14:28:08 +0700
+
+teckit (2.5.8+ds2-4) unstable; urgency=medium
+
+  * Release to unstable for texlive-bin to use
+  * d/control remove Conflicts
+      Build/Replaces on texlive-bin (<< 2018.20180907.48586-3~)
+
+ -- Daniel Glassey <wdg@debian.org>  Sat, 03 Nov 2018 10:09:31 +0700
+
+teckit (2.5.8+ds2-3) experimental; urgency=medium
+
+  * add build-dep on pkg-kde-tools
+  * d/rules --with pkgkde_symbolshelper
+  * first batch of libteckit0.symbols updates from builds
+
+ -- Daniel Glassey <wdg@debian.org>  Thu, 01 Nov 2018 13:32:33 +0700
+
+teckit (2.5.8+ds2-2) experimental; urgency=medium
+
+  * amd64 symbols to get others from build logs
+      because of C++ lib
+
+ -- Daniel Glassey <wdg@debian.org>  Thu, 01 Nov 2018 11:24:11 +0700
+
+teckit (2.5.8+ds2-1) experimental; urgency=medium
+
+  * new upstream release 2.5.8
+  * d/compat version 11
+  * d/rules add hardening
+  * add d/libteckit0.symbols
+  * d/watch add watch file for github
+  * add upstream signing key
+  * d/control add github homepage and salsa vcs
+      update dependencies
+      standards 4.2.1 (no changes)
+      add breaks/replaces on current texlive
+  * d/copyright add Files-Excluded
+      update licensing of some files
+
+ -- Daniel Glassey <wdg@debian.org>  Wed, 31 Oct 2018 16:24:45 +0700
+
+teckit (2.5.4~svn140+ds2-1) experimental; urgency=medium
+
+  * Initial release to Debian, Closes: #805054
+  * +ds2 source removes expat source
+  * Add patches from texlive-bin-2015.20150524.37493
+  * Upload to experimental to co-ordinate with debian-tex-maint
+  * Conflict with texlive-binaries (<= 2015.20150524.37493-7)
+      both contain teckit_compile
+  * Improve description
+  * Add Debian TeX and Norbert Preining as uploaders
+
+ -- Daniel Glassey <wdg@debian.org>  Mon, 30 Nov 2015 15:28:43 +0700
+
+teckit (2.5.4~svn140+ds1-1) unstable; urgency=medium
+
+  * move to debhelper 9
+  * +ds1 source removes zlib source
+  * add a couple of manpages
+  * machine readable copyright
+  * add libteckit0 package
+  * multiarch enable
+  * remove perl package
+  * 3.0 (quilt) format
+  * current svn checkout
+
+ -- Daniel Glassey <wdg@debian.org>  Thu, 12 Nov 2015 23:35:57 +0000
+
+teckit (2.5.4~beta1) stable; urgency=medium
+
+  * Update Unicode character names and normalization data to 7.0.0
+  * Fix data normalization bug
+  * Update tests
+
+ -- Neil Mayhew <neil_mayhew@sil.org>  Mon, 30 Jun 2014 17:17:45 -0600
+
+teckit (2.5.3) maverick; urgency=low
+
+  * Update Unicode character names and normalization data to 6.0.0
+  * Update copyright dates and contact details
+
+ -- Neil Mayhew <neil_mayhew@sil.org>  Wed, 12 Jan 2011 21:26:48 -0700
+
+teckit (2.5.2) intrepid; urgency=low
+
+  * Fix Perl handling 0 length return strings
+
+ -- Martin Hosken <martin_hosken@sil.org>  Fri, 30 Jan 2009 19:14:38 +0700
+
+teckit (2.5.1-1ubuntu1~hardy) hardy; urgency=low
+
+  * Package v2.5.1
+
+ -- Martin Hosken <martin_hosken@sil.org>  Thu, 03 Apr 2008 15:11:04 +0700
+
+Local variables:
+mode: debian-changelog
+End:
